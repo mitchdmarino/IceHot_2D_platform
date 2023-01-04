@@ -30,5 +30,5 @@ func _on_HUD_stop_move_right():
 
 func _on_HUD_jump():
 	$IcePlayer.jump = true
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(0.3), "timeout")
 	$IcePlayer.jump = false

@@ -19,23 +19,17 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _on_JumpButton_pressed():
+	emit_signal("jump")
 
-func _on_LeftButton_button_down():
+func _on_LeftButton_pressed():
 	emit_signal("move_left")
 
-
-func _on_RightButton_button_down():
-	emit_signal("move_right")
-
-
-
-func _on_LeftButton_button_up():
+func _on_LeftButton_released():
 	emit_signal("stop_move_left")
 
+func _on_RightButton_pressed():
+	emit_signal("move_right")
 
-func _on_RightButton_button_up():
+func _on_RightButton_released():
 	emit_signal("stop_move_right")
-
-
-func _on_JumpButton_button_down():
-	emit_signal("jump")

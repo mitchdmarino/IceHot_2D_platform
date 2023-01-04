@@ -1,10 +1,13 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var speed = 400
+export var speed = 200
+var jump_speed = 400
+var gravity = 800
+var velocity = Vector2()
 var screen_size
 var moveLeft = false
 var moveRight = false
@@ -14,22 +17,23 @@ var jump = false
 func _ready():
 	screen_size = get_viewport_rect().size
 
+func get_input(delta): 
+	velocity.x = 0
+	if moveRight or Input.is_action_pressed("ui_right"):
+		velocity.x +=speed
+	if moveLeft or Input.is_action_pressed("ui_left"):
+		velocity.x -=speed
+	if jump or Input.is_action_pressed("ui_up"):
+		if is_on_floor():
+			velocity.y -= jump_speed
+	#gravity
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity, Vector2.UP)
 
-func _process(delta):
+func _physics_process(delta):
 	# Check for input 
-	var velocity = Vector2.ZERO
-	if moveLeft:
-		velocity.x -=1
-	if moveRight:
-		velocity.x +=1
-	if jump: 
-		velocity.y -=1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	get_input(delta)
 	
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
 
 
 	
