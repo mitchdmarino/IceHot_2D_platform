@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_arrows.png-225ea289a7a8e4be5f2b763a13e75b33.stex"
+path="res://.import/IceHot_waterTemplate.png-8e2d2e83f8a7b1068d096aaf12cebfaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ui_arrows.png"
-dest_files=[ "res://.import/ui_arrows.png-225ea289a7a8e4be5f2b763a13e75b33.stex" ]
+source_file="res://art/tiles/IceHot_waterTemplate.png"
+dest_files=[ "res://.import/IceHot_waterTemplate.png-8e2d2e83f8a7b1068d096aaf12cebfaa.stex" ]
 
 [params]
 

@@ -32,3 +32,7 @@ func _on_HUD_jump():
 	$IcePlayer.jump = true
 	yield(get_tree().create_timer(0.3), "timeout")
 	$IcePlayer.jump = false
+
+
+func _on_WaterWay_player_entered():
+	$IcePlayer.jump=true

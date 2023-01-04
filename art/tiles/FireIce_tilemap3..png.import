@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FireIce_tilemap..png-4abfc7b06b0bf62736515b2ab7acb925.stex"
+path="res://.import/FireIce_tilemap3..png-d0b11ba9ce100b9d53b7e8fdc3f3ee77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FireIce_tilemap..png"
-dest_files=[ "res://.import/FireIce_tilemap..png-4abfc7b06b0bf62736515b2ab7acb925.stex" ]
+source_file="res://art/tiles/FireIce_tilemap3..png"
+dest_files=[ "res://.import/FireIce_tilemap3..png-d0b11ba9ce100b9d53b7e8fdc3f3ee77.stex" ]
 
 [params]
 

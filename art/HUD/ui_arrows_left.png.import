@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FireSprite.png-39a9aa23041fbb004c1dfab1bf0e843f.stex"
+path="res://.import/ui_arrows_left.png-027478cb3fe8e6a557b840b6ca383ace.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FireSprite.png"
-dest_files=[ "res://.import/FireSprite.png-39a9aa23041fbb004c1dfab1bf0e843f.stex" ]
+source_file="res://art/HUD/ui_arrows_left.png"
+dest_files=[ "res://.import/ui_arrows_left.png-027478cb3fe8e6a557b840b6ca383ace.stex" ]
 
 [params]
 

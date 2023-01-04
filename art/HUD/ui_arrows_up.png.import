@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FireIce_tilemap2..png-76916879e4b8450f9bbd2b1cd8bd14e6.stex"
+path="res://.import/ui_arrows_up.png-b4796efb84c10a3bd7cfcb183178fc55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FireIce_tilemap2..png"
-dest_files=[ "res://.import/FireIce_tilemap2..png-76916879e4b8450f9bbd2b1cd8bd14e6.stex" ]
+source_file="res://art/HUD/ui_arrows_up.png"
+dest_files=[ "res://.import/ui_arrows_up.png-b4796efb84c10a3bd7cfcb183178fc55.stex" ]
 
 [params]
 

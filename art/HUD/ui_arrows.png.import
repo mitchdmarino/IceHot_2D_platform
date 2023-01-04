@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_arrows_left.png-1b98de8d8b72ed339c6dd6b998efbe9c.stex"
+path="res://.import/ui_arrows.png-f1aa60193b0178eabb6df4f98cd8ba3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ui_arrows_left.png"
-dest_files=[ "res://.import/ui_arrows_left.png-1b98de8d8b72ed339c6dd6b998efbe9c.stex" ]
+source_file="res://art/HUD/ui_arrows.png"
+dest_files=[ "res://.import/ui_arrows.png-f1aa60193b0178eabb6df4f98cd8ba3e.stex" ]
 
 [params]
 
