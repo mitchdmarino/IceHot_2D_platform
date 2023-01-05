@@ -5,6 +5,7 @@ signal stop_move_left
 signal move_right
 signal stop_move_right
 signal jump
+signal switch_control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -33,3 +34,7 @@ func _on_RightButton_pressed():
 
 func _on_RightButton_released():
 	emit_signal("stop_move_right")
+
+
+func _on_TouchScreenButton_pressed():
+	emit_signal("switch_control")

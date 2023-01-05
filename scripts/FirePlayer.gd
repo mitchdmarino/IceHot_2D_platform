@@ -4,6 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var color = "red"
 export var speed = 200
 var jump_speed = 400
 var gravity = 800
@@ -12,6 +13,7 @@ var screen_size
 var moveLeft = false
 var moveRight = false
 var jump = false
+var alive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +21,7 @@ func _ready():
 
 func get_input(delta): 
 	velocity.x = 0
-	if moveRight:
+	if moveRight :
 		velocity.x +=speed
 	if moveLeft:
 		velocity.x -=speed
@@ -34,6 +36,5 @@ func _physics_process(delta):
 	# Check for input 
 	get_input(delta)
 	
-
-
-	
+func die():
+	hide()

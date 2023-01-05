@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://art/HUD/ui_arrows_left.png" type="Texture" id=2]
 [ext_resource path="res://art/HUD/ui_arrows_right.png" type="Texture" id=3]
 [ext_resource path="res://art/HUD/ui_arrows_up.png" type="Texture" id=4]
+[ext_resource path="res://art/sprites/IceSprite.png" type="Texture" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -26,8 +27,14 @@ position = Vector2( 947, 531 )
 scale = Vector2( 0.135804, 0.225108 )
 normal = ExtResource( 4 )
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 865, 537 )
+scale = Vector2( 0.0330161, 0.0312664 )
+normal = ExtResource( 5 )
+
 [connection signal="pressed" from="LeftButton" to="." method="_on_LeftButton_pressed"]
 [connection signal="released" from="LeftButton" to="." method="_on_LeftButton_released"]
 [connection signal="pressed" from="RightButton" to="." method="_on_RightButton_pressed"]
 [connection signal="released" from="RightButton" to="." method="_on_RightButton_released"]
 [connection signal="pressed" from="JumpButton" to="." method="_on_JumpButton_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

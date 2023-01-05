@@ -11,4 +11,5 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Area2D_body_entered(body):
-	emit_signal("player_entered")
+	if body.is_in_group("FirePlayer"):
+		body.die()
