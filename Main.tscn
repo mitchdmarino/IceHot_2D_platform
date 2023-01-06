@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://IcePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://WaterWay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FirePlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://YellowObstacle.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Node"]
+[node name="TestArea" type="Node"]
 script = ExtResource( 4 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
@@ -28,6 +29,9 @@ position = Vector2( 499, 123 )
 
 [node name="FirePlayer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 367, 125 )
+
+[node name="YellowObstacle" parent="." instance=ExtResource( 7 )]
+position = Vector2( 607, 561 )
 
 [connection signal="jump" from="HUD" to="." method="_on_HUD_jump"]
 [connection signal="move_left" from="HUD" to="." method="_on_HUD_move_left"]
