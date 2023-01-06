@@ -7,6 +7,8 @@ func _ready():
 	yellowButton.translate(Vector2(100, -500))
 	$YellowObstacle.add_child(yellowButton)
 	$YellowObstacle/YellowButton.translate(Vector2(-100, 0))
+	$YellowObstacle/YellowWall/Sprite.modulate = Color(0, 0, 1)
+	$YellowObstacle/YellowButton/ButtonAnimation.modulate = Color(0, 0, 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
