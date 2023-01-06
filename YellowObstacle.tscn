@@ -11,7 +11,8 @@ script = ExtResource( 1 )
 position = Vector2( -2, -8 )
 
 [node name="YellowWall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 60, -122 )
+position = Vector2( 31, -64 )
+scale = Vector2( -0.800628, 0.536141 )
 
 [connection signal="body_entered" from="YellowButton" to="." method="_on_YellowButton_body_entered"]
 [connection signal="body_exited" from="YellowButton" to="." method="_on_YellowButton_body_exited"]
