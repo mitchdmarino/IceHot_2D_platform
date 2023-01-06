@@ -1,73 +1,76 @@
 extends Node
 var blueControl = true
 # Called when the node enters the scene tree for the first time
-var level = self.get_child(0)
+var level
+
 func _ready():
-		pass
+	level = self.get_child(0)
+	print(level)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (blueControl):
 		if Input.is_action_pressed("ui_right"):
-			$Level_1/IcePlayer.moveRight = true
+			level.get_node("IcePlayer").moveRight = true
 		if Input.is_action_just_released("ui_right"):
-			$Level_1/IcePlayer.moveRight = false
+			level.get_node("IcePlayer").moveRight = false
 		if Input.is_action_pressed("ui_left"):
-			$Level_1/IcePlayer.moveLeft = true
+			level.get_node("IcePlayer").moveLeft = true
 		if Input.is_action_just_released("ui_left"):
-			$Level_1/IcePlayer.moveLeft = false
+			level.get_node("IcePlayer").moveLeft = false
 		if Input.is_action_just_pressed("ui_up"):
-			$Level_1/IcePlayer.jump = true
+			level.get_node("IcePlayer").jump = true
 			yield(get_tree().create_timer(0.3), "timeout")
-			$Level_1/IcePlayer.jump = false 
+			level.get_node("IcePlayer").jump = false 
 	else:
 		if Input.is_action_pressed("ui_right"):
-			$Level_1/FirePlayer.moveRight = true
+			level.get_node("FirePlayer").moveRight = true
 		if Input.is_action_just_released("ui_right"):
-			$Level_1/FirePlayer.moveRight = false
+			level.get_node("FirePlayer").moveRight = false
 		if Input.is_action_pressed("ui_left"):
-			$Level_1/FirePlayer.moveLeft = true
+			level.get_node("FirePlayer").moveLeft = true
 		if Input.is_action_just_released("ui_left"):
-			$Level_1/FirePlayer.moveLeft = false
+			level.get_node("FirePlayer").moveLeft = false
 		if Input.is_action_just_pressed("ui_up"):
-			$Level_1/FirePlayer.jump = true
+			level.get_node("FirePlayer").jump = true
 			yield(get_tree().create_timer(0.3), "timeout")
-			$Level_1/FirePlayer.jump = false 
+			level.get_node("FirePlayer").jump = false 
 
 func _on_HUD_move_left():
 	if (blueControl):
-		$Level_1/IcePlayer.moveLeft = true
+		level.get_node("IcePlayer").moveLeft = true
 	else:
-		$Level_1/FirePlayer.moveLeft = true
+		level.get_node("FirePlayer").moveLeft = true
 
 func _on_HUD_move_right():
 	if (blueControl):
-		$Level_1/IcePlayer.moveRight = true
+		level.get_node("IcePlayer").moveRight = true
 	else:
-		$Level_1/FirePlayer.moveRight = true
+		level.get_node("FirePlayer").moveRight = true
 
 func _on_HUD_stop_move_left():
 	if (blueControl):
-		$Level_1/IcePlayer.moveLeft = false
+		level.get_node("IcePlayer").moveLeft = false
 	else:
-		$Level_1/FirePlayer.moveLeft = false
+		level.get_node("FirePlayer").moveLeft = false
 
 func _on_HUD_stop_move_right():
 	if (blueControl):
-		$Level_1/IcePlayer.moveRight = false
+		level.get_node("IcePlayer").moveRight = false
 	else:
-		$Level_1/FirePlayer.moveRight = false
+		level.get_node("FirePlayer").moveRight = false
 
 func _on_HUD_jump():
 	if (blueControl):
-		$Level_1/IcePlayer.jump = true
+		level.get_node("IcePlayer").jump = true
 		yield(get_tree().create_timer(0.3), "timeout")
-		$Level_1/IcePlayer.jump = false
+		level.get_node("IcePlayer").jump = false
 	else:
-		$Level_1/FirePlayer.jump = true
+		level.get_node("FirePlayer").jump = true
 		yield(get_tree().create_timer(0.3), "timeout")
-		$Level_1/FirePlayer.jump = false
+		level.get_node("FirePlayer").jump = false
 
 func _on_WaterWay_player_entered():
 	pass
@@ -78,8 +81,9 @@ func _on_HUD_switch_control():
 
 func _on_Level_1_level_complete():
 	var level_1 = self.get_node("Level_1")
-	self.remove_child(level_1)
+	self.remove_child(level)
 	var level_2_resource = load("res://Level_2.tscn")
 	var level_2 = level_2_resource.instance()
 	self.add_child(level_2)
+	level = level_2
 	
